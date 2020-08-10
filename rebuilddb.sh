@@ -14,8 +14,8 @@ if [ $FEDIREADS_DATABASE_BACKEND = 'sqlite' ]; then
   fi
 else
   # assume postgres
-  dropdb fedireads
-  createdb fedireads
+  dropdb fedireads -p 5432
+  createdb fedireads -p 5432
 fi
 
 python manage.py makemigrations fedireads
